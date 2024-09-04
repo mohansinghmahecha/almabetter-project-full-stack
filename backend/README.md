@@ -30,10 +30,6 @@ It is created with the help of Postman
 
 
 
-
-![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/movie-detail.png?alt=media&token=713bf0d1-7bc7-4f50-b684-ee0085279208)
-
-
 ![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/backend-postman.png?alt=media&token=26c3a74c-2c90-46c0-b430-446ffb2802b2)
 
 
