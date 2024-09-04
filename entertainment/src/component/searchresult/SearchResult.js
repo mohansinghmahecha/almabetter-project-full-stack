@@ -1,9 +1,15 @@
 import React from "react";
 import { CiBookmark } from "react-icons/ci";
 import { GoDotFill } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 
 
-export default function SearchResults({ results, onItemClick, onSave }) {
+export default function SearchResults({ results, onSave }) {
+  const navigator = useNavigate()
+  function onItemClick(id){
+    navigator(`movie-detail/${id}`)
+ 
+  }
   return (
     <div className="trending-container mt-4">
       {results.length > 0 ? (
