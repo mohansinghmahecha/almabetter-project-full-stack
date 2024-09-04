@@ -12,7 +12,7 @@ export default function Home() {
   const timerRef = useRef(null);// Using useRef to keep track of the timer for debouncing
 
   useEffect(() => {
-    if (query.length > 3) {
+    if (query.length > 2) {
       // Clear the previous timer if the query changes
       if (timerRef.current) {
         clearTimeout(timerRef.current);
@@ -36,7 +36,7 @@ export default function Home() {
           .catch((error) => {
             console.error("Error fetching data:", error);
           });
-      }, 1500); // 1.5 seconds delay
+      }, 500); // 1.5 seconds delay
     } else {
       setFilteredResults([]); // Clear results when query is empty or too short
     }
@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div className="searching-menu">
       {/* Search input */}
-      <div className="w-full flex gap-10 text-white">
+      <div className="w-full flex gap-10 text-white hover:cursor-pointer">
         <IoSearch className="w-6 h-6 p-0 mt-2  " />
         <span className="bg-col">
           <input

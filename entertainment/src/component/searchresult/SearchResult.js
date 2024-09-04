@@ -3,12 +3,14 @@ import { CiBookmark } from "react-icons/ci";
 import { GoDotFill } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 
-
 export default function SearchResults({ results, onSave }) {
-  const navigator = useNavigate()
-  function onItemClick(id){
-    navigator(`movie-detail/${id}`)
- 
+  const navigator = useNavigate();
+  function onItemClick(id, movietype) {
+    if (movietype == "movie") {
+      navigator(`movie-detail/${id}`);
+    } else {
+      navigator(`tv-serial-detail/${id}`);
+    }
   }
   return (
     <div className="trending-container mt-4">
@@ -17,16 +19,16 @@ export default function SearchResults({ results, onSave }) {
           <div
             key={result.id}
             className="trending-box"
-            onClick={() => onItemClick(result.id)}
+            onClick={() => onItemClick(result.id, result.media_type)}
           >
             <div
-              className="background-image"
+              className="background-image "
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/w500${result.poster_path})`,
               }}
             />
             <div className="overlay" />
-            <div className="comp-grid">
+            <div className="comp-grid hover:cursor-pointer">
               <div className="grid-1">
                 <CiBookmark
                   className="text-white hover:cursor-pointer"
@@ -39,7 +41,9 @@ export default function SearchResults({ results, onSave }) {
               <div className="grid-2">
                 <div className="flex tracking-wide text-slate-400">
                   <p className="font-bold">
-                    {new Date(result.release_date || result.first_air_date).getFullYear()}
+                    {new Date(
+                      result.release_date || result.first_air_date
+                    ).getFullYear()}
                   </p>
                   &nbsp;
                   <span className="inline">
