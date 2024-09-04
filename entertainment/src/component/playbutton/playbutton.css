@@ -1,0 +1,33 @@
+/* playbutton.css */
+
+.play-button {
+   
+    background-color: transparent ;
+    background-color: rgba(111, 114, 119, 0.438);
+    border-radius: 16px;
+    border: 2px solid white;
+    padding: 6px; /* Adjust the padding as needed */
+    cursor: pointer;
+    z-index: 4;
+  }
+
+  
+.play-button-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centers the PlayButton within its parent container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    z-index: 40;
+    /* Initially hidden */
+}
+
+.movie-image:hover .play-button-container {
+    visibility: visible;
+    /* Show on hover */
+}
+
