@@ -48,7 +48,7 @@ export default function Trending() {
         {movies.map((movie) => (
           <div
             key={movie.id}// Unique key for each movie in the list
-            className="trending-box hover:cursor-pointer"
+            className="trending-box hover:cursor-pointer transform transition-transform duration-200 hover:scale-105"
             // when on box pressed , to show in full detail page
             onClick={() => trandingOnClick(movie.id)}
           >

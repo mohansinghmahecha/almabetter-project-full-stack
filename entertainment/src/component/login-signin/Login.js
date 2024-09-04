@@ -9,9 +9,11 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Initialize useNavigate is blank
+  const [loginloading, setLoginLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoginLoading(true);
 
     try {
       const response = await fetch(
@@ -34,12 +36,15 @@ export default function Login() {
         console.log("Login successful!", data);
         setError(""); // Clear any previous error messages
         // Redirect to the dashboard or any other page
+        setLoginLoading(false);
         navigate("/"); // Navigate to the home page
       } else {
         setError(data.message || "Invalid email or password");
+        setLoginLoading(false);
       }
     } catch (err) {
       setError("An error occurred. Please try again.");
+      setLoginLoading(false);
     }
   };
 
@@ -75,7 +80,7 @@ export default function Login() {
           <div className="w-full mt-8 sub-login-box">
             <div>
               <button className="bg-red-400 p-2" onClick={handleLogin}>
-                Log in to your account
+                {loginloading ? "Login ...." : "Log in to your account"}
               </button>
             </div>
             {error && <p className="text-red-500 mt-2">{error}</p>}{" "}

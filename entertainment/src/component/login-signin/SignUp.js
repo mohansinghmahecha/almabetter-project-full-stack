@@ -10,6 +10,7 @@ export default function Logout() {
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
   const [fullname, setFullName] = useState("");
   const [confirmfullname, setConfirmFullName] = useState(true);
+  const [loading, setLoading] = useState(false); // New state for loading
   const navigate = useNavigate();
 
   const nametyped = (e) => {
@@ -45,6 +46,8 @@ export default function Logout() {
       return;
     }
 
+    setLoading(true); // Set loading to true when submission starts
+
     try {
       const response = await fetch(
         "https://entertainment-backend-1-5p0s.onrender.com/api/users/register",
@@ -76,6 +79,8 @@ export default function Logout() {
       }
     } catch (error) {
       alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false); // Set loading to false when the submission completes
     }
   };
 
@@ -144,13 +149,18 @@ export default function Logout() {
         </div>
 
         <div className="text-center flex flex-col items-center">
-          <button id="signup-button" className="p-4" onClick={handleonSumit}>
-            Create An Account
+          <button
+            id="signup-button"
+            className={`p-4 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+            onClick={handleonSumit}
+            disabled={loading} // Disable the button when loading
+          >
+            {loading ? "Creating Account..." : "Create An Account"}
           </button>
           <p>
             Already have an account?{" "}
             <Link to="/login">
-              <span>Login</span>
+              <span className="text-red-500">Login</span>
             </Link>
           </p>
         </div>

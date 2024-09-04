@@ -53,7 +53,7 @@ export const MainComponent = () => {
             {token ? (
               <button onClick={handleLogout} className="logout-button">
                 <CgProfile className="item-size-2 text-green-500" />
-                <small>Out</small>
+                <small className="overflow-x-hidden">LogOut</small>
               </button>
             ) : (
               <Link to="/login">

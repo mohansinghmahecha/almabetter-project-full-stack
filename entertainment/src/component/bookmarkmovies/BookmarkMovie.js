@@ -14,8 +14,8 @@ export default function Bookmark() {
     setSavedMovies(movies);
   }, []);
 
-  const handleRemoveBookmark = (movieId,event) => {
-     event.stopPropagation();
+  const handleRemoveBookmark = (movieId, event) => {
+    event.stopPropagation();
     // Get the existing saved movies from localStorage
     const savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
@@ -40,12 +40,12 @@ export default function Bookmark() {
           Bookmark Of Movies Item
         </p>
       </div>
-      <div className="bookmark-t-container mt-4">
+      <div className="bookmark-t-container mt-4 hover:cursor-pointer ">
         {savedMovies.length > 0 ? (
           savedMovies.map((movie) => (
             <div
               key={movie.id}
-              className="bookmark-trending-box"
+              className="bookmark-trending-box transform transition-transform duration-200 hover:scale-105"
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
               }}
@@ -56,7 +56,7 @@ export default function Bookmark() {
                 <div className="grid-1">
                   <CiBookmark
                     className="text-white hover:cursor-pointer"
-                    onClick={(event) => handleRemoveBookmark(movie.id,event)}
+                    onClick={(event) => handleRemoveBookmark(movie.id, event)}
                   />
                 </div>
                 <div className="grid-2">

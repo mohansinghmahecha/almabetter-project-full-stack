@@ -19,9 +19,10 @@ export default function Recommendation() {
       const response = await fetch(TO_PRATED_URL);
       const data = await response.json();
       const topMovies = data.results.slice(0, 5);
-      setRecommendationList(topMovies);
+      return topMovies;
     } catch (error) {
       console.error("Error fetching top-rated movies:", error);
+      return [];
     }
   };
 
@@ -46,13 +47,13 @@ export default function Recommendation() {
     ).slice(0, 5);
 
     setRecommendationList(uniqueList);
+    setSavedMovies(savedMoviesFromStorage);
   }, []);
 
   // Fetch data on component mount
   useEffect(() => {
     const initRecommendationList = async () => {
-      fetchTopRated();
-      const topMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
+      const topMovies = await fetchTopRated();
       updateRecommendationList(topMovies);
     };
 
@@ -72,6 +73,7 @@ export default function Recommendation() {
     const updatedSavedMovies = [...savedMovies, movie];
     localStorage.setItem("savedMovies", JSON.stringify(updatedSavedMovies));
     setSavedMovies(updatedSavedMovies);
+    updateRecommendationList(recommendationList);
   }
 
   // Handle image loading state
@@ -91,7 +93,7 @@ export default function Recommendation() {
         {recommendationList.map((movie) => (
           <div
             key={movie.id}
-            className="trending-box hover:cursor-pointer"
+            className="trending-box hover:cursor-pointer transform transition-transform duration-200 hover:scale-105"
             onClick={() => handleClick(movie.id)}
           >
             <div
