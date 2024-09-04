@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+## Description of project
+Entertainment App: A Full-Stack Approach to Movie and TV Show Exploration" 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description:
+In today’s digital age, entertainment consumption has become an integral part of our daily lives. With the vast of movies and TV shows available across various platforms, users often face the challenge of finding a centralized hub where they can discover, search, and bookmark their favorite content. The Entertainment App project was conceived to address this challenge.
 
-## Available Scripts
+Frontend Development : 
+The frontend of the Entertainment App was developed using React, a powerful JavaScript library known for its component-based architecture. React was chosen for its ability to create reusable UI components, which significantly improves code maintainability and scalability. The application’s UI was designed with a focus on responsiveness, ensuring that users have a consistent experience across all devices, whether they are on a mobile phone, tablet, or desktop.
 
-In the project directory, you can run:
+Backend Development:
+The backend was built using Node.js and Express.js, providing a lightweight and efficient environment for handling HTTP requests, managing user sessions, and interacting with the MongoDB database. MongoDB was chosen for its flexibility in handling unstructured data, which was particularly useful given the varied and dynamic nature of the data retrieved from the TMDb Api.
 
-### `npm start`
+## Color Reference
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+|  |
+| Primary Color | ![#10141E](https://via.placeholder.com/10/10141E?text=+) #10141E |
+| Secondary color  | ![#5A698F](https://via.placeholder.com/10/5A698F?text=+) #5A698F |
+| Red color  | ![#FC4747](https://via.placeholder.com/10/FC4747?text=+) #FC4747 |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## documentaion of API
+https://documenter.getpostman.com/view/29605878/2sAXjNXqPy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Please refer to the accompanying documentation for a complete list of API routes and their functionalities.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It is created with the help of Postman
+## Screenshots of project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/sign-in-out.jpg?alt=media&token=732c0a3c-f4da-4808-9483-4a8e6e897695)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/trending.png?alt=media&token=c383c77b-6048-40c5-9ea1-af55e7240b3f)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/list-of-tv-serials.png?alt=media&token=ab975fca-8b0c-476c-a322-95bbe1145681)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/movie-detail.png?alt=media&token=713bf0d1-7bc7-4f50-b684-ee0085279208)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Main box](https://firebasestorage.googleapis.com/v0/b/for-pic-storages.appspot.com/o/backend-postman.png?alt=media&token=26c3a74c-2c90-46c0-b430-446ffb2802b2)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Used By
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is used by the following companies:
 
-### Deployment
+- Almabetter Project 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Remember How To Use
+
+ To run this project offline
+
+
+
+for backend
+
+```bash
+npm i 
+```
+```bash
+cd backend
+```
+```bash
+node index.js AND node Server.js
+```
+```bash
+package.json 
+
+
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
+
+```
+
+Now  will start server in port 5000
+
+for run frontend :
+
+```bash
+npm i
+```
+```bash
+ cd entertainment
+```
+
+
+```bash
+npm start
+```
+
+
+
+## Deployed Link - Online
+
+It is easy to use for the user who is suffering the internet this is home page of a website .
+
+
+*our deployed backend project hosted on vercel
+https://entertainment-bice.vercel.app/
+
+
+*our deployed backend project hosted on render
+https://entertainment-backend-1-5p0s.onrender.com
+## 🚀 About Me
+I'm a full stack developer...
+
+
